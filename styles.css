@@ -1,0 +1,554 @@
+/*!
+Theme Name: wptailwind
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: wptailwind
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+wptailwind is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@tailwind base;
+
+@font-face {
+  font-family: Clip;
+  src: url("Clip.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: centurygothic;
+  src: url("GOTHIC.TTF");
+  font-display: swap;
+}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  text-transform: lowercase;
+  --pale-pink: #f7cac9;
+  --pink: #f9dcdc;
+  --brown: #393a10;
+  background: var(--pink);
+  position: relative;
+  background: url(img/hero4.PNG);
+  background-size: cover;
+  background-position: bottom;
+  overflow-x: hidden;
+  font-display: swap;
+}
+
+.nav-menu {
+  @apply flex;
+  @apply justify-end;
+  @apply items-center;
+}
+.nav-menu li {
+  @apply px-4 py-2;
+}
+.nav-menu li a {
+  @apply text-black;
+  font-family: centurygothic;
+}
+.nav-menu li a:hover {
+  text-decoration: underline;
+}
+.nav-scrolled {
+  @apply bg-black;
+}
+
+.site-header {
+  transition: 0.25s background-color ease-in-out;
+  z-index: 55;
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  top: 0;
+}
+.menu-image-title-below {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between;
+  align-items: center !important;
+  @apply h-full;
+}
+
+.menu-image-title-below .menu-image-title {
+  margin-top: 2px;
+}
+.site-footer {
+  height: auto;
+  z-index: 40;
+}
+.site-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.hero {
+  min-height: 100vh;
+
+  /* background-image: linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px),
+    linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px); */
+}
+
+.wpcf7-submit {
+  background: white !important;
+}
+.about {
+  min-height: 70vh;
+}
+
+.about-description h2 {
+  font-size: 72px;
+  font-weight: 400;
+}
+
+.contact {
+  min-height: 70vh;
+}
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact-text h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.googlemap {
+  width: 100%;
+  height: 350px;
+}
+
+h1 {
+  @apply text-4xl leading-tight;
+}
+h2 {
+  @apply text-3xl font-semibold leading-tight;
+}
+h3 {
+  @apply text-lg;
+}
+p {
+  @apply leading-relaxed;
+}
+a {
+  @apply text-gray-900;
+}
+.post-navigation {
+  @apply w-1/2 p-4 mx-auto;
+}
+
+.comment-form {
+  @apply bg-gray-200 w-full p-6 flex flex-col justify-center mx-auto;
+}
+.comment-form-comment textarea {
+  @apply w-full;
+}
+.comment-respond {
+  @apply flex flex-col justify-center;
+}
+.comment-form-author {
+  @apply my-3;
+}
+.comment-form-author input {
+  @apply w-full;
+}
+.comment-form-email {
+  @apply my-3;
+}
+.comment-form-email input {
+  @apply w-full;
+}
+
+.comment-form-url {
+  @apply w-full my-3;
+}
+.comment-form-url input {
+  @apply w-full;
+}
+.comment-reply-title {
+  @apply my-8;
+}
+.custom-logo {
+  @apply mb-4;
+}
+.submit {
+  @apply bg-blue-500 py-4 mt-8 px-4 text-white;
+}
+.post-thumbnail {
+  @apply block;
+  @apply w-5/12;
+}
+.post-thumbnail img {
+  @apply w-full my-6;
+}
+.updated {
+  @apply hidden;
+}
+.entry-footer > * {
+  @apply mb-1;
+}
+.entry-content p {
+  @apply mb-3;
+}
+.widget-area > * {
+  @apply mb-8;
+}
+.widget-area ul li {
+  @apply mb-1 list-disc;
+}
+.widget-area ul li a {
+  @apply text-black underline;
+}
+.search-submit {
+  @apply bg-black py-4 px-8 text-white;
+}
+.btn {
+  @apply py-4 px-8 text-white;
+  transition: 0.25s background-color ease-in-out, 0.25s transform ease-in;
+  background: var(--pale-pink);
+}
+
+.ig-logo {
+  width: 30px;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  border-color: var(--brown) !important;
+}
+
+.comment {
+  @apply my-4;
+}
+.comment-body {
+  @apply mb-6;
+}
+.comment-list {
+  @apply bg-gray-100 p-6;
+}
+.comment-metadata {
+  @apply mb-6;
+}
+.comment-content {
+  @apply mb-6;
+}
+.children {
+  @apply ml-4 bg-gray-300 p-4;
+}
+
+.footer-bottom {
+  background: #f7f7f7;
+}
+
+input,
+textarea {
+  @apply py-2 px-4;
+  border-radius: 5px;
+}
+.wpcf7-form {
+  width: 95% !important;
+}
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  width: 95%;
+}
+
+.wp-block-contact-form-7-contact-form-selector {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.wpcf7-form p {
+  @apply mb-4;
+}
+.hero-btn {
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+  color: var(--pale-pink);
+  transition: 0.25s background-color ease-in-out, 0.25s transform ease-in;
+  transform: translateY(200px);
+}
+
+.hero-btn:focus {
+  outline: none;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  background-color: white;
+}
+@media only screen and (max-width: 850px) {
+  .hero {
+    min-height: 70vh;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .hero {
+    padding-top: 2rem;
+  }
+  .about-img {
+    height: 50vh;
+  }
+  .contact-img {
+    height: 50vh;
+  }
+
+  .hero-btn {
+    margin: 1rem 0;
+  }
+
+  .sign {
+    font-size: 4em !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sign {
+    font-size: 3em !important;
+    margin-top: 4rem;
+  }
+}
+
+.photos {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.svgheart {
+  fill: #f7f7f7;
+}
+/* .svgheart:hover {
+  fill: black;
+} */
+.svgheart-text:hover {
+  fill: white;
+}
+
+/* css text animation */
+.sign {
+  width: 45%;
+  height: 35%;
+
+  letter-spacing: 2;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #e27e77;
+  text-shadow: 0 0 0.6rem #ffd3d0, 0 0 1.5rem #ffd3d0,
+    -0.2rem 0.1rem 1rem #e77b73, 0.2rem 0.1rem 1rem #e77b73,
+    0 -0.5rem 2rem #ffd3d0, 0 0.5rem 3rem #ffd3d0;
+  animation: shine 10s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ececec;
+    text-shadow: 0 0 0.6rem #ffd3d0, 0 0 1.5rem #ffd3d0,
+      -0.2rem 0.1rem 1rem #e77b73, 0.2rem 0.1rem 1rem #e77b73,
+      0 -0.5rem 2rem #e2dcdb, 0 0.5rem 3rem #e2dcdb;
+  }
+  28%,
+  33% {
+    color: #e77b73;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #de4a3f;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 5s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+.medium-flicker {
+  animation: shine 2s forwards, blink 6s 1s infinite;
+}
+
+.let-it-shine {
+  animation: shine 2s forwards, blink 20s 0.2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #dd493e;
+    text-shadow: none;
+  }
+  100% {
+    color: #ececec;
+    text-shadow: 0 0 0.6rem #ffd3d0, 0 0 1.5rem #ffd3d0,
+      -0.2rem 0.1rem 1rem #e77b73, 0.2rem 0.1rem 1rem #e77b73,
+      0 -0.5rem 2rem #e2dcdb, 0 0.5rem 3rem #e2dcdb;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@tailwind components;
+
+@tailwind utilities;
